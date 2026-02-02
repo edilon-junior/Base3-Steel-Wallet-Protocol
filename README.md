@@ -1,19 +1,18 @@
 # Ternary-Steel-Seed Protocol (9-3-1)
 
-A ultra-compact, DIY BIP39 cold storage protocol that uses **Incomplete Ternary Logic** to store seed phrases on stainless steel plates.
+A ultra-compact, DIY BIP39 cold storage protocol using **Incomplete Ternary Logic** to store seed phrases on stainless steel plates.
 
 ## Description
-This method encodes each letter of a BIP39 word (first 4 letters) into 3 weighted positions (**9, 3, 1**) using a "Mark-on-Presence" system. This approach uses dual sub-slots to represent values 0, 1, and 2, achieving high density with manual tools.
+Each letter of a BIP39 word is encoded into 3 weighted positions (**9, 3, 1**). This approach uses dual sub-slots per weight to represent values 0, 1, and 2.
 
 ---
 
-## The Logic: Weighted Ternary (Base-3)
-Each letter has a decimal index (A=0, Z=25). We use weights **9, 3, and 1**. 
-Each weight has two physical slots: **Slot A (Value 1)** and **Slot B (Value 2)**.
-
-* **Value 0:** No holes.
-* **Value 1:** Punch **Slot A**.
-* **Value 2:** Punch **Slot B**.
+## The Logic: Weighted Ternary
+Each letter has a decimal index (A=0, Z=25).
+* **Weight 9, 3, 1**: Three columns of storage.
+* **Slot A**: Value 1.
+* **Slot B**: Value 2.
+* **Empty**: Value 0.
 
 **Formula:** `Index = (W9 * SlotValue) + (W3 * SlotValue) + (W1 * SlotValue)`
 
@@ -21,7 +20,7 @@ Each weight has two physical slots: **Slot A (Value 1)** and **Slot B (Value 2)*
 
 ## Mapping Table (A-Z)
 
-| Letter | Index | 9 (A|B) | 3 (A|B) | 1 (A|B) | Letter | Index | 9 (A|B) | 3 (A|B) | 1 (A|B) |
+| Letter | Index | 9 (A\|B) | 3 (A\|B) | 1 (A\|B) | Letter | Index | 9 (A\|B) | 3 (A\|B) | 1 (A\|B) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **A** | 0 | 0 \| 0 | 0 \| 0 | 0 \| 0 | **N** | 13 | 1 \| 0 | 1 \| 0 | 1 \| 0 |
 | **B** | 1 | 0 \| 0 | 0 \| 0 | 1 \| 0 | **O** | 14 | 1 \| 0 | 1 \| 0 | 0 \| 1 |
@@ -42,6 +41,7 @@ Each weight has two physical slots: **Slot A (Value 1)** and **Slot B (Value 2)*
 ## Grid Layout (Visual Example)
 
 ### 1. Empty Grid (Per Word)
+
 ```text
  WORD 01   |   WEIGHT 9  |   WEIGHT 3  |   WEIGHT 1  |
 -----------|-------------|-------------|-------------|
