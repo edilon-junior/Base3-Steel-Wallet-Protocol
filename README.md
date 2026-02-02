@@ -46,10 +46,28 @@ Each letter has a decimal index (A=0, Z=25). We use a 3-digit code where each di
 ```text
  WORD 01   |   WEIGHT 9  |   WEIGHT 3  |   WEIGHT 1  |
 -----------|-------------|-------------|-------------|
- SUB-SLOTS |  A  |  B    |  A  |  B    |  A  |  B    |
+ MULTIPLIER|  1  |  2    |  1  |  2    |  1  |  2    |
 -----------|-----|-------|-----|-------|-----|-------|
  L1 (B:001)| [ ] | [ ]   | [ ] | [ ]   | [*] | [ ]   |
  L2 (A:000)| [ ] | [ ]   | [ ] | [ ]   | [ ] | [ ]   |
  L3 (L:102)| [*] | [ ]   | [ ] | [ ]   | [ ] | [*]   |
  L4 (L:102)| [*] | [ ]   | [ ] | [ ]   | [ ] | [*]   |
 -----------|-----|-------|-----|-------|-----|-------|
+```
+so for letter letter B we have that the index is 9x0 + 3x0 + 1x1, resulting 1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
