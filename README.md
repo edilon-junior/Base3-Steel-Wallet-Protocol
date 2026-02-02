@@ -11,8 +11,8 @@ Each letter is encoded into a 3-digit Ternary string based on weights **9, 3, an
 Each letter has a decimal index (A=0, Z=25). We use a 3-digit code where each digit can be **0, 1, or 2**.
 
 * **Value 0:** No holes.
-* **Value 1:** Punch **Slot A**.
-* **Value 2:** Punch **Slot B**.
+* **Value 1:** Punch **MULTIPLIER 1**.
+* **Value 2:** Punch **MULTIPLIER 2**.
 
 **Formula:** `Index = (Digit1 * 9) + (Digit2 * 3) + (Digit3 * 1)`
 
